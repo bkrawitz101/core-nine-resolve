@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, [data-theme="business"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-inverse: #0B0F17;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --accent-primary: #1D4ED8;
+    --accent-nine: #D97706;
+    --state-friction: #DC2626;
+    --state-aligned: #059669;
+    --border-subtle: #E2E8F0;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  [data-theme="sage"] {
+    --bg-primary: #FBF8F3;
+    --bg-secondary: #F2EAE1;
+    --bg-inverse: #1C2826;
+    --text-primary: #292524;
+    --text-secondary: #57534E;
+    --accent-primary: #3F6212;
+    --accent-nine: #E11D48;
+    --border-subtle: #E7E0D6;
+    --font-heading: 'Instrument Serif', Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* 3D Flip Utilities for SAGE Metaphorical Decks */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Crosshair indicator at structural grid intersections */
+.crosshair-corner {
+  position: relative;
+}
+.crosshair-corner::before {
+  content: "+";
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1;
+  color: #94A3B8;
+  pointer-events: none;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
